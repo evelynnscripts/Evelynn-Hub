@@ -1,3 +1,3 @@
-# Evelynn-Hub
+# Evelynn Hub Official
 ```lua
-print("coming soon")```
+loadstring(game:HttpGet("https://raw.githubusercontent.com/evelynnscripts/Evelynn-Hub/refs/heads/main/Source.lua",true))()```
