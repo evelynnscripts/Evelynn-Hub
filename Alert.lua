@@ -86,11 +86,3 @@ mcvne.MouseButton1Click:Connect(function()
 	task.wait(2)
 	qlwei:Destroy()
 end)
-local Players = game:GetService("Players")
-local player = Players.LocalPlayer
-
-local function sendMessage(message)
-    game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer(message, "All")
-end
-
-sendMessage("hello")
