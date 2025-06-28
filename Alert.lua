@@ -1,123 +1,123 @@
-local TweenService = game:GetService("TweenService")
-local lkfjd = game:GetService("Players")
-local psodj = lkfjd.LocalPlayer
-local vkzue = psodj:WaitForChild("PlayerGui")
+local TS = game:GetService("TweenService")
+local LK = game:GetService("Players")
+local PS = LK.LocalPlayer
+local VK = PS:WaitForChild("PlayerGui")
 
-local function safeCreate(func)
-	local success, result = pcall(func)
-	if not success then
-		warn("Alert.lua Error: ", result)
+local function SC(FN)
+	local SS, RS = pcall(FN)
+	if not SS then
+		warn("Alert.lua Error: ", RS)
 	end
-	return result
+	return RS
 end
 
-local qlwei = safeCreate(function()
-	local gui = Instance.new("ScreenGui")
-	gui.Name = "EvelynnHubOfficialAlert"
-	gui.ResetOnSpawn = false
-	gui.IgnoreGuiInset = true
-	gui.Parent = vkzue
-	return gui
+local QL = SC(function()
+	local GU = Instance.new("ScreenGui")
+	GU.Name = "gui"
+	GU.ResetOnSpawn = false
+	GU.IgnoreGuiInset = true
+	GU.Parent = VK
+	return GU
 end)
 
-local hdyue = safeCreate(function()
-	local frame = Instance.new("Frame")
-	frame.Size = UDim2.new(0, 350, 0, 160)
-	frame.Position = UDim2.new(0.5, -175, 0.5, -80)
-	frame.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
-	frame.BorderSizePixel = 0
-	frame.AnchorPoint = Vector2.new(0.5, 0.5)
-	frame.BackgroundTransparency = 1
-	frame.ClipsDescendants = true
-	frame.Parent = qlwei
-	return frame
+local HD = SC(function()
+	local FR = Instance.new("Frame")
+	FR.Size = UDim2.new(0, 350, 0, 160)
+	FR.Position = UDim2.new(0.5, -175, 0.5, -80)
+	FR.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+	FR.BorderSizePixel = 0
+	FR.AnchorPoint = Vector2.new(0.5, 0.5)
+	FR.BackgroundTransparency = 1
+	FR.ClipsDescendants = true
+	FR.Parent = QL
+	return FR
 end)
 
-safeCreate(function()
-	local corner = Instance.new("UICorner")
-	corner.CornerRadius = UDim.new(0, 10)
-	corner.Parent = hdyue
+SC(function()
+	local UC = Instance.new("UICorner")
+	UC.CornerRadius = UDim.new(0, 10)
+	UC.Parent = HD
 end)
 
-safeCreate(function()
-	local stroke = Instance.new("UIStroke")
-	stroke.Thickness = 2
-	stroke.Color = Color3.fromRGB(255, 0, 85)
-	stroke.Parent = hdyue
+SC(function()
+	local US = Instance.new("UIStroke")
+	US.Thickness = 2
+	US.Color = Color3.fromRGB(255, 0, 85)
+	US.Parent = HD
 end)
 
-safeCreate(function()
-	local label = Instance.new("TextLabel")
-	label.Size = UDim2.new(1, -20, 0, 40)
-	label.Position = UDim2.new(0, 10, 0, 10)
-	label.BackgroundTransparency = 1
-	label.Text = "Script Was Executed!"
-	label.Font = Enum.Font.GothamBold
-	label.TextSize = 24
-	label.TextColor3 = Color3.fromRGB(255, 255, 255)
-	label.TextStrokeTransparency = 0.8
-	label.TextXAlignment = Enum.TextXAlignment.Left
-	label.Parent = hdyue
+SC(function()
+	local XL = Instance.new("TextLabel")
+	XL.Size = UDim2.new(1, -20, 0, 40)
+	XL.Position = UDim2.new(0, 10, 0, 10)
+	XL.BackgroundTransparency = 1
+	XL.Text = "Script Was Executed!"
+	XL.Font = Enum.Font.GothamBold
+	XL.TextSize = 24
+	XL.TextColor3 = Color3.fromRGB(255, 255, 255)
+	XL.TextStrokeTransparency = 0.8
+	XL.TextXAlignment = Enum.TextXAlignment.Left
+	XL.Parent = HD
 end)
 
-safeCreate(function()
-	local desc = Instance.new("TextLabel")
-	desc.Size = UDim2.new(1, -20, 0, 60)
-	desc.Position = UDim2.new(0, 10, 0, 50)
-	desc.BackgroundTransparency = 1
-	desc.TextWrapped = true
-	desc.Text = "Evelynn Hub will load within 45 seconds due to API issues. Please wait patiently.\nIt may load faster depending on what executor you using!"
-	desc.Font = Enum.Font.Gotham
-	desc.TextSize = 16
-	desc.TextColor3 = Color3.fromRGB(200, 200, 200)
-	desc.TextXAlignment = Enum.TextXAlignment.Left
-	desc.TextYAlignment = Enum.TextYAlignment.Top
-	desc.Parent = hdyue
+SC(function()
+	local YB = Instance.new("TextLabel")
+	YB.Size = UDim2.new(1, -20, 0, 60)
+	YB.Position = UDim2.new(0, 10, 0, 50)
+	YB.BackgroundTransparency = 1
+	YB.TextWrapped = true
+	YB.Text = "Evelynn Hub will load within 60 seconds due to API issues. Please wait patiently.\nIt may load faster depending on what Executor you using!"
+	YB.Font = Enum.Font.Gotham
+	YB.TextSize = 16
+	YB.TextColor3 = Color3.fromRGB(200, 200, 200)
+	YB.TextXAlignment = Enum.TextXAlignment.Left
+	YB.TextYAlignment = Enum.TextYAlignment.Top
+	YB.Parent = HD
 end)
 
-local mcvne = safeCreate(function()
-	local btn = Instance.new("TextButton")
-	btn.Size = UDim2.new(0, 100, 0, 30)
-	btn.Position = UDim2.new(0.5, -50, 1, -40)
-	btn.BackgroundColor3 = Color3.fromRGB(200, 0, 0)
-	btn.Text = "Noted and Close"
-	btn.Font = Enum.Font.GothamSemibold
-	btn.TextSize = 14
-	btn.TextColor3 = Color3.fromRGB(255, 255, 255)
-	btn.AutoButtonColor = false
-	btn.Parent = hdyue
-	return btn
+local MC = SC(function()
+	local BT = Instance.new("TextButton")
+	BT.Size = UDim2.new(0, 100, 0, 30)
+	BT.Position = UDim2.new(0.5, -50, 1, -40)
+	BT.BackgroundColor3 = Color3.fromRGB(200, 0, 0)
+	BT.Text = "I Understand!"
+	BT.Font = Enum.Font.GothamSemibold
+	BT.TextSize = 14
+	BT.TextColor3 = Color3.fromRGB(255, 255, 255)
+	BT.AutoButtonColor = false
+	BT.Parent = HD
+	return BT
 end)
 
-safeCreate(function()
-	local btnCorner = Instance.new("UICorner")
-	btnCorner.CornerRadius = UDim.new(0, 6)
-	btnCorner.Parent = mcvne
+SC(function()
+	local BC = Instance.new("UICorner")
+	BC.CornerRadius = UDim.new(0, 6)
+	BC.Parent = MC
 end)
 
-safeCreate(function()
-	mcvne.MouseEnter:Connect(function()
-		mcvne.BackgroundColor3 = Color3.fromRGB(255, 40, 40)
+SC(function()
+	MC.MouseEnter:Connect(function()
+		MC.BackgroundColor3 = Color3.fromRGB(255, 40, 40)
 	end)
-	mcvne.MouseLeave:Connect(function()
-		mcvne.BackgroundColor3 = Color3.fromRGB(200, 0, 0)
+	MC.MouseLeave:Connect(function()
+		MC.BackgroundColor3 = Color3.fromRGB(200, 0, 0)
 	end)
 end)
 
-safeCreate(function()
-	TweenService:Create(hdyue, TweenInfo.new(2, Enum.EasingStyle.Sine, Enum.EasingDirection.Out), {
+SC(function()
+	TS:Create(HD, TweenInfo.new(2, Enum.EasingStyle.Sine, Enum.EasingDirection.Out), {
 		BackgroundTransparency = 0.1
 	}):Play()
 end)
 
-safeCreate(function()
-	mcvne.MouseButton1Click:Connect(function()
+SC(function()
+	MC.MouseButton1Click:Connect(function()
 		pcall(function()
-			TweenService:Create(hdyue, TweenInfo.new(2, Enum.EasingStyle.Sine, Enum.EasingDirection.In), {
+			TS:Create(HD, TweenInfo.new(2, Enum.EasingStyle.Sine, Enum.EasingDirection.In), {
 				BackgroundTransparency = 1
 			}):Play()
-			task.wait(2)
-			qlwei:Destroy()
+			task.wait(1)
+			QL:Destroy()
 		end)
 	end)
 end)
