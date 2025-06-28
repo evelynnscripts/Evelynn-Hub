@@ -5,4 +5,4 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/evelynnscripts/Evelyn
 ```
 **Please do NOT execute [this](https://github.com/evelynnscripts/Evelynn-Hub/blob/main/Alert.lua) or [this](https://github.com/evelynnscripts/Evelynn-Hub/blob/main/helper.lua).**
 
-These scripts are part of the main [Source.lua](https://github.com/evelynnscripts/Evelynn-Hub/blob/main/Source.lua) functionality, and running them separately **may get your Roblox account banned!**
+These scripts are part of the main [Main Script](https://github.com/evelynnscripts/Evelynn-Hub/blob/main/Source.lua) functionality, and running them separately **may get your Roblox account banned!**
