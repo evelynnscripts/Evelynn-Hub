@@ -6,7 +6,7 @@ local v4 = v3:WaitForChild("PlayerGui")
 local function v5(v6)
 	local v7, v8 = pcall(v6)
 	if not v7 then
-		warn("Alert.lua Error: ", v8)
+		warn("Error")
 	end
 	return v8
 end
