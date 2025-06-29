@@ -1,123 +1,123 @@
-local TS = game:GetService("TweenService")
-local LK = game:GetService("Players")
-local PS = LK.LocalPlayer
-local VK = PS:WaitForChild("PlayerGui")
+local v1 = game:GetService("TweenService")
+local v2 = game:GetService("Players")
+local v3 = v2.LocalPlayer
+local v4 = v3:WaitForChild("PlayerGui")
 
-local function SC(FN)
-	local SS, RS = pcall(FN)
-	if not SS then
-		warn("Alert.lua Error: ", RS)
+local function v5(v6)
+	local v7, v8 = pcall(v6)
+	if not v7 then
+		warn("Alert.lua Error: ", v8)
 	end
-	return RS
+	return v8
 end
 
-local QL = SC(function()
-	local GU = Instance.new("ScreenGui")
-	GU.Name = "gui"
-	GU.ResetOnSpawn = false
-	GU.IgnoreGuiInset = true
-	GU.Parent = VK
-	return GU
+local v9 = v5(function()
+	local v1 = Instance.new("ScreenGui")
+	v1.Name = "gui"
+	v1.ResetOnSpawn = false
+	v1.IgnoreGuiInset = true
+	v1.Parent = v4
+	return v1
 end)
 
-local HD = SC(function()
-	local FR = Instance.new("Frame")
-	FR.Size = UDim2.new(0, 350, 0, 160)
-	FR.Position = UDim2.new(0.5, -175, 0.5, -80)
-	FR.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
-	FR.BorderSizePixel = 0
-	FR.AnchorPoint = Vector2.new(0.5, 0.5)
-	FR.BackgroundTransparency = 1
-	FR.ClipsDescendants = true
-	FR.Parent = QL
-	return FR
+local v2 = v5(function()
+	local v3 = Instance.new("Frame")
+	v3.Size = UDim2.new(0, 350, 0, 160)
+	v3.Position = UDim2.new(0.5, -175, 0.5, -80)
+	v3.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+	v3.BorderSizePixel = 0
+	v3.AnchorPoint = Vector2.new(0.5, 0.5)
+	v3.BackgroundTransparency = 1
+	v3.ClipsDescendants = true
+	v3.Parent = v9
+	return v3
 end)
 
-SC(function()
-	local UC = Instance.new("UICorner")
-	UC.CornerRadius = UDim.new(0, 10)
-	UC.Parent = HD
+v5(function()
+	local v4 = Instance.new("UICorner")
+	v4.CornerRadius = UDim.new(0, 10)
+	v4.Parent = v2
 end)
 
-SC(function()
-	local US = Instance.new("UIStroke")
-	US.Thickness = 2
-	US.Color = Color3.fromRGB(255, 0, 85)
-	US.Parent = HD
+v5(function()
+	local v5 = Instance.new("UIStroke")
+	v5.Thickness = 2
+	v5.Color = Color3.fromRGB(255, 0, 85)
+	v5.Parent = v2
 end)
 
-SC(function()
-	local XL = Instance.new("TextLabel")
-	XL.Size = UDim2.new(1, -20, 0, 40)
-	XL.Position = UDim2.new(0, 10, 0, 10)
-	XL.BackgroundTransparency = 1
-	XL.Text = "Script Was Executed!"
-	XL.Font = Enum.Font.GothamBold
-	XL.TextSize = 24
-	XL.TextColor3 = Color3.fromRGB(255, 255, 255)
-	XL.TextStrokeTransparency = 0.8
-	XL.TextXAlignment = Enum.TextXAlignment.Left
-	XL.Parent = HD
+v5(function()
+	local v6 = Instance.new("TextLabel")
+	v6.Size = UDim2.new(1, -20, 0, 40)
+	v6.Position = UDim2.new(0, 10, 0, 10)
+	v6.BackgroundTransparency = 1
+	v6.Text = "Script Was Executed!"
+	v6.Font = Enum.Font.GothamBold
+	v6.TextSize = 24
+	v6.TextColor3 = Color3.fromRGB(255, 255, 255)
+	v6.TextStrokeTransparency = 0.8
+	v6.TextXAlignment = Enum.TextXAlignment.Left
+	v6.Parent = v2
 end)
 
-SC(function()
-	local YB = Instance.new("TextLabel")
-	YB.Size = UDim2.new(1, -20, 0, 60)
-	YB.Position = UDim2.new(0, 10, 0, 50)
-	YB.BackgroundTransparency = 1
-	YB.TextWrapped = true
-	YB.Text = "Evelynn Hub will load within 60 seconds due to API issues. Please wait patiently.\nIt may load faster depending on what Executor you using!"
-	YB.Font = Enum.Font.Gotham
-	YB.TextSize = 16
-	YB.TextColor3 = Color3.fromRGB(200, 200, 200)
-	YB.TextXAlignment = Enum.TextXAlignment.Left
-	YB.TextYAlignment = Enum.TextYAlignment.Top
-	YB.Parent = HD
+v5(function()
+	local v7 = Instance.new("TextLabel")
+	v7.Size = UDim2.new(1, -20, 0, 60)
+	v7.Position = UDim2.new(0, 10, 0, 50)
+	v7.BackgroundTransparency = 1
+	v7.TextWrapped = true
+	v7.Text = "Evelynn Hub will load within 60 seconds due to API issues. Please wait patiently.\nIt may load faster depending on what Executor you using!"
+	v7.Font = Enum.Font.Gotham
+	v7.TextSize = 16
+	v7.TextColor3 = Color3.fromRGB(200, 200, 200)
+	v7.TextXAlignment = Enum.TextXAlignment.Left
+	v7.TextYAlignment = Enum.TextYAlignment.Top
+	v7.Parent = v2
 end)
 
-local MC = SC(function()
-	local BT = Instance.new("TextButton")
-	BT.Size = UDim2.new(0, 100, 0, 30)
-	BT.Position = UDim2.new(0.5, -50, 1, -40)
-	BT.BackgroundColor3 = Color3.fromRGB(200, 0, 0)
-	BT.Text = "I Understand!"
-	BT.Font = Enum.Font.GothamSemibold
-	BT.TextSize = 14
-	BT.TextColor3 = Color3.fromRGB(255, 255, 255)
-	BT.AutoButtonColor = false
-	BT.Parent = HD
-	return BT
+local v8 = v5(function()
+	local v9 = Instance.new("TextButton")
+	v9.Size = UDim2.new(0, 100, 0, 30)
+	v9.Position = UDim2.new(0.5, -50, 1, -40)
+	v9.BackgroundColor3 = Color3.fromRGB(200, 0, 0)
+	v9.Text = "I Understand!"
+	v9.Font = Enum.Font.GothamSemibold
+	v9.TextSize = 14
+	v9.TextColor3 = Color3.fromRGB(255, 255, 255)
+	v9.AutoButtonColor = false
+	v9.Parent = v2
+	return v9
 end)
 
-SC(function()
-	local BC = Instance.new("UICorner")
-	BC.CornerRadius = UDim.new(0, 6)
-	BC.Parent = MC
+v5(function()
+	local v1 = Instance.new("UICorner")
+	v1.CornerRadius = UDim.new(0, 6)
+	v1.Parent = v8
 end)
 
-SC(function()
-	MC.MouseEnter:Connect(function()
-		MC.BackgroundColor3 = Color3.fromRGB(255, 40, 40)
+v5(function()
+	v8.MouseEnter:Connect(function()
+		v8.BackgroundColor3 = Color3.fromRGB(255, 40, 40)
 	end)
-	MC.MouseLeave:Connect(function()
-		MC.BackgroundColor3 = Color3.fromRGB(200, 0, 0)
+	v8.MouseLeave:Connect(function()
+		v8.BackgroundColor3 = Color3.fromRGB(200, 0, 0)
 	end)
 end)
 
-SC(function()
-	TS:Create(HD, TweenInfo.new(2, Enum.EasingStyle.Sine, Enum.EasingDirection.Out), {
+v5(function()
+	v1:Create(v2, TweenInfo.new(2, Enum.EasingStyle.Sine, Enum.EasingDirection.Out), {
 		BackgroundTransparency = 0.1
 	}):Play()
 end)
 
-SC(function()
-	MC.MouseButton1Click:Connect(function()
+v5(function()
+	v8.MouseButton1Click:Connect(function()
 		pcall(function()
-			TS:Create(HD, TweenInfo.new(2, Enum.EasingStyle.Sine, Enum.EasingDirection.In), {
+			v1:Create(v2, TweenInfo.new(2, Enum.EasingStyle.Sine, Enum.EasingDirection.In), {
 				BackgroundTransparency = 1
 			}):Play()
 			task.wait(1)
-			QL:Destroy()
+			v9:Destroy()
 		end)
 	end)
 end)
