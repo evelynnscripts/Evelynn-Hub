@@ -6,7 +6,7 @@ local v4 = v3:WaitForChild("PlayerGui")
 local function v5(v6)
 	local v7, v8 = pcall(v6)
 	if not v7 then
-		warn("Alert.lua Error: ", v8)
+		warn("Error")
 	end
 	return v8
 end
@@ -51,7 +51,7 @@ v5(function()
 	v6.Size = UDim2.new(1, -20, 0, 40)
 	v6.Position = UDim2.new(0, 10, 0, 10)
 	v6.BackgroundTransparency = 1
-	v6.Text = "Script Was Executed!"
+	v6.Text = "Loading Evelynn Hub..."
 	v6.Font = Enum.Font.GothamBold
 	v6.TextSize = 24
 	v6.TextColor3 = Color3.fromRGB(255, 255, 255)
