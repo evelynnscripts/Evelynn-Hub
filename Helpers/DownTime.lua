@@ -68,7 +68,7 @@ T.TextColor3 = Color3.fromRGB(0, 255, 255)
 T.TextXAlignment = Enum.TextXAlignment.Left
 T.ZIndex = 12
 
-local fullTitle = "Script Down..."
+local fullTitle = "Outdated..."
 task.spawn(function()
 	for i = 1, #fullTitle do
 		T.Text = fullTitle:sub(1, i)
@@ -87,7 +87,7 @@ Info.TextYAlignment = Enum.TextYAlignment.Top
 Info.TextColor3 = Color3.fromRGB(100, 255, 255)
 Info.TextXAlignment = Enum.TextXAlignment.Left
 Info.ZIndex = 11
-Info.Text = "Hey there! Evelynn Hub MVSD is currently down.\nGame updated silently, I suspect that they might have updated thier Anti-Cheat system.\nPlease hang on and join our discord server for latest info!"
+Info.Text = "You are executing an outdated script\nJoin our discord for updated and latest scripts."
 
 local D = Instance.new("TextButton", I)
 D.Size = UDim2.new(0, 200, 0, 36)
