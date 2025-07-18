@@ -1,7 +1,7 @@
 local TweenService = game:GetService("TweenService")
 local Players = game:GetService("Players")
 local gui = Instance.new("ScreenGui", game.CoreGui)
-gui.Name = "EvelynnFuturisticUI"
+gui.Name = "coool"
 gui.IgnoreGuiInset = true
 gui.ResetOnSpawn = false
 
