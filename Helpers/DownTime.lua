@@ -5,122 +5,122 @@ gui.Name = "EvelynnFuturisticUI"
 gui.IgnoreGuiInset = true
 gui.ResetOnSpawn = false
 
-local frame = Instance.new("Frame", gui)
-frame.Size = UDim2.new(0, 460, 0, 200)
-frame.Position = UDim2.new(0.5, -230, 0.5, -100)
-frame.BackgroundColor3 = Color3.fromRGB(15, 15, 20)
-frame.BorderSizePixel = 0
-frame.Active = true
-frame.Draggable = true
-frame.ZIndex = 10
-Instance.new("UICorner", frame).CornerRadius = UDim.new(0, 12)
+local F = Instance.new("Frame", gui)
+F.Size = UDim2.new(0, 460, 0, 200)
+F.Position = UDim2.new(0.5, -230, 0.5, -100)
+F.BackgroundColor3 = Color3.fromRGB(15, 15, 20)
+F.BorderSizePixel = 0
+F.Active = true
+F.Draggable = true
+F.ZIndex = 10
+Instance.new("UICorner", F).CornerRadius = UDim.new(0, 12)
 
-local glow = Instance.new("UIStroke", frame)
-glow.Color = Color3.fromRGB(0, 255, 255)
-glow.Thickness = 1.5
-glow.Transparency = 0.2
-glow.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+local S = Instance.new("UIStroke", F)
+S.Color = Color3.fromRGB(0, 255, 255)
+S.Thickness = 1.5
+S.Transparency = 0.2
+S.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
 
 task.spawn(function()
-	while frame and frame.Parent do
-		TweenService:Create(glow, TweenInfo.new(1, Enum.EasingStyle.Sine, Enum.EasingDirection.InOut), {Transparency = 0.05}):Play()
+	while F and F.Parent do
+		TweenService:Create(S, TweenInfo.new(1, Enum.EasingStyle.Sine, Enum.EasingDirection.InOut), {Transparency = 0.05}):Play()
 		task.wait(1)
-		TweenService:Create(glow, TweenInfo.new(1, Enum.EasingStyle.Sine, Enum.EasingDirection.InOut), {Transparency = 0.2}):Play()
+		TweenService:Create(S, TweenInfo.new(1, Enum.EasingStyle.Sine, Enum.EasingDirection.InOut), {Transparency = 0.2}):Play()
 		task.wait(1)
 	end
 end)
 
-local inner = Instance.new("Frame", frame)
-inner.Size = UDim2.new(1, -20, 1, -20)
-inner.Position = UDim2.new(0, 10, 0, 10)
-inner.BackgroundColor3 = Color3.fromRGB(5, 5, 10)
-inner.BorderSizePixel = 0
-inner.ZIndex = 11
-Instance.new("UICorner", inner).CornerRadius = UDim.new(0, 10)
+local I = Instance.new("Frame", F)
+I.Size = UDim2.new(1, -20, 1, -20)
+I.Position = UDim2.new(0, 10, 0, 10)
+I.BackgroundColor3 = Color3.fromRGB(5, 5, 10)
+I.BorderSizePixel = 0
+I.ZIndex = 11
+Instance.new("UICorner", I).CornerRadius = UDim.new(0, 10)
 
-local gradient = Instance.new("UIGradient", inner)
-gradient.Color = ColorSequence.new{
+local G = Instance.new("UIGradient", I)
+G.Color = ColorSequence.new{
 	ColorSequenceKeypoint.new(0, Color3.fromRGB(0, 255, 255)),
 	ColorSequenceKeypoint.new(1, Color3.fromRGB(255, 0, 255))
 }
-gradient.Rotation = 45
+G.Rotation = 45
 
-local closeBtn = Instance.new("TextButton", inner)
-closeBtn.Size = UDim2.new(0, 40, 0, 40)
-closeBtn.Position = UDim2.new(1, -45, 0, 5)
-closeBtn.Text = "✖"
-closeBtn.Font = Enum.Font.GothamBold
-closeBtn.TextScaled = true
-closeBtn.TextColor3 = Color3.fromRGB(255, 75, 75)
-closeBtn.BackgroundTransparency = 1
-closeBtn.ZIndex = 15
-closeBtn.MouseButton1Click:Connect(function()
-	frame:Destroy()
+local C = Instance.new("TextButton", I)
+C.Size = UDim2.new(0, 40, 0, 40)
+C.Position = UDim2.new(1, -45, 0, 5)
+C.Text = "✖"
+C.Font = Enum.Font.GothamBold
+C.TextScaled = true
+C.TextColor3 = Color3.fromRGB(255, 75, 75)
+C.BackgroundTransparency = 1
+C.ZIndex = 15
+C.MouseButton1Click:Connect(function()
+	F:Destroy()
 end)
 
-local title = Instance.new("TextLabel", inner)
-title.Size = UDim2.new(1, -60, 0, 35)
-title.Position = UDim2.new(0, 15, 0, 5)
-title.BackgroundTransparency = 1
-title.Font = Enum.Font.GothamBold
-title.TextSize = 22
-title.TextColor3 = Color3.fromRGB(0, 255, 255)
-title.TextXAlignment = Enum.TextXAlignment.Left
-title.ZIndex = 12
+local T = Instance.new("TextLabel", I)
+T.Size = UDim2.new(1, -60, 0, 35)
+T.Position = UDim2.new(0, 15, 0, 5)
+T.BackgroundTransparency = 1
+T.Font = Enum.Font.GothamBold
+T.TextSize = 22
+T.TextColor3 = Color3.fromRGB(0, 255, 255)
+T.TextXAlignment = Enum.TextXAlignment.Left
+T.ZIndex = 12
 
 local fullTitle = "Script Down..."
 task.spawn(function()
 	for i = 1, #fullTitle do
-		title.Text = fullTitle:sub(1, i)
+		T.Text = fullTitle:sub(1, i)
 		task.wait(0.03)
 	end
 end)
 
-local info = Instance.new("TextLabel", inner)
-info.Size = UDim2.new(1, -30, 0, 70)
-info.Position = UDim2.new(0, 15, 0, 45)
-info.BackgroundTransparency = 1
-info.Font = Enum.Font.Gotham
-info.TextSize = 16
-info.TextWrapped = true
-info.TextYAlignment = Enum.TextYAlignment.Top
-info.TextColor3 = Color3.fromRGB(100, 255, 255)
-info.TextXAlignment = Enum.TextXAlignment.Left
-info.ZIndex = 11
-info.Text = "Hey there! Evelynn Hub MVSD is currently down.\nGame updated silently, I suspect that they might have updated thier Anti-Cheat system.\nPlease hang on and join our discord server for latest info!"
+local Info = Instance.new("TextLabel", I)
+Info.Size = UDim2.new(1, -30, 0, 70)
+Info.Position = UDim2.new(0, 15, 0, 45)
+Info.BackgroundTransparency = 1
+Info.Font = Enum.Font.Gotham
+Info.TextSize = 16
+Info.TextWrapped = true
+Info.TextYAlignment = Enum.TextYAlignment.Top
+Info.TextColor3 = Color3.fromRGB(100, 255, 255)
+Info.TextXAlignment = Enum.TextXAlignment.Left
+Info.ZIndex = 11
+Info.Text = "Hey there! Evelynn Hub MVSD is currently down.\nGame updated silently, I suspect that they might have updated thier Anti-Cheat system.\nPlease hang on and join our discord server for latest info!"
 
-local discordBtn = Instance.new("TextButton", inner)
-discordBtn.Size = UDim2.new(0, 200, 0, 36)
-discordBtn.Position = UDim2.new(0.5, -100, 1, -46)
-discordBtn.Text = "Copy Discord Link"
-discordBtn.Font = Enum.Font.GothamBold
-discordBtn.TextSize = 18
-discordBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
-discordBtn.BackgroundColor3 = Color3.fromRGB(25, 25, 40)
-discordBtn.ZIndex = 12
-Instance.new("UICorner", discordBtn).CornerRadius = UDim.new(0, 8)
+local D = Instance.new("TextButton", I)
+D.Size = UDim2.new(0, 200, 0, 36)
+D.Position = UDim2.new(0.5, -100, 1, -46)
+D.Text = "Copy Discord Link"
+D.Font = Enum.Font.GothamBold
+D.TextSize = 18
+D.TextColor3 = Color3.fromRGB(255, 255, 255)
+D.BackgroundColor3 = Color3.fromRGB(25, 25, 40)
+D.ZIndex = 12
+Instance.new("UICorner", D).CornerRadius = UDim.new(0, 8)
 
-discordBtn.MouseButton1Click:Connect(function()
+D.MouseButton1Click:Connect(function()
 	if setclipboard then
 		setclipboard("https://discord.gg/w7D4W4j27j")
-		discordBtn.Text = "Link Copied"
-		TweenService:Create(discordBtn, TweenInfo.new(0.2), {BackgroundColor3 = Color3.fromRGB(35, 70, 35)}):Play()
+		D.Text = "Link Copied"
+		TweenService:Create(D, TweenInfo.new(0.2), {BackgroundColor3 = Color3.fromRGB(35, 70, 35)}):Play()
 		task.wait(2)
-		discordBtn.Text = "Copy Discord Link"
-		TweenService:Create(discordBtn, TweenInfo.new(0.2), {BackgroundColor3 = Color3.fromRGB(25, 25, 40)}):Play()
+		D.Text = "Copy Discord Link"
+		TweenService:Create(D, TweenInfo.new(0.2), {BackgroundColor3 = Color3.fromRGB(25, 25, 40)}):Play()
 	end
 end)
 
-local orb = Instance.new("ImageLabel", gui)
-orb.AnchorPoint = Vector2.new(0.5, 0.5)
-orb.Position = frame.Position
-orb.Size = UDim2.new(0, 500, 0, 500)
-orb.BackgroundTransparency = 1
-orb.Image = "rbxassetid://6980520010"
-orb.ImageColor3 = Color3.fromRGB(0, 255, 255)
-orb.ImageTransparency = 0.85
-orb.ZIndex = 1
+local O = Instance.new("ImageLabel", gui)
+O.AnchorPoint = Vector2.new(0.5, 0.5)
+O.Position = F.Position
+O.Size = UDim2.new(0, 500, 0, 500)
+O.BackgroundTransparency = 1
+O.Image = "rbxassetid://6980520010"
+O.ImageColor3 = Color3.fromRGB(0, 255, 255)
+O.ImageTransparency = 0.85
+O.ZIndex = 1
 
-TweenService:Create(orb, TweenInfo.new(2, Enum.EasingStyle.Sine, Enum.EasingDirection.InOut, -1, true), {
+TweenService:Create(O, TweenInfo.new(2, Enum.EasingStyle.Sine, Enum.EasingDirection.InOut, -1, true), {
 	ImageTransparency = 0.6
 }):Play()
