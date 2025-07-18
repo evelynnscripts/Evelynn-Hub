@@ -1,4 +1,4 @@
-loadstring(game:HttpGet("https://raw.githubusercontent.com/evelynnscripts/Evelynn-Hub-V9/refs/heads/main/Helpers/global-updates.lua",true))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/evelynnscripts/Evelynn-Hub/refs/heads/main/Helpers/Updates.lua",true))()
 
 local TweenService = game:GetService("TweenService")
 local Players = game:GetService("Players")
