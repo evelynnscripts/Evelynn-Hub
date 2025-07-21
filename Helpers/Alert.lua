@@ -1,5 +1,3 @@
-loadstring(game:HttpGet("https://raw.githubusercontent.com/evelynnscripts/Evelynn-Hub/refs/heads/main/Helpers/Updates.lua",true))()
-
 local TweenService = game:GetService("TweenService")
 local Players = game:GetService("Players")
 local gui = Instance.new("ScreenGui", game.CoreGui)
@@ -89,7 +87,7 @@ info.TextYAlignment = Enum.TextYAlignment.Top
 info.TextColor3 = Color3.fromRGB(100, 255, 255)
 info.TextXAlignment = Enum.TextXAlignment.Left
 info.ZIndex = 11
-info.Text = "✅ Logging Removed\n🔐 Join Discord for bypass\n🛠️ DM if script gets patched!"
+info.Text = "⚡ Join Discord for all Evelynn Hub Keys\n🫵 Let me know if a script gets patched, I will update it.\n💠 Enjoy using Evelynn Hub!!"
 
 local discordBtn = Instance.new("TextButton", inner)
 discordBtn.Size = UDim2.new(0, 200, 0, 36)
