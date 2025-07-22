@@ -1,6 +1,6 @@
--- Script was obfuscated to prevent skidders
 --[[
 
+Script was obfuscated to prevent skidders
 obfuscated @ discord.gg/25ms
 
 --]]
