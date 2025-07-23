@@ -1,7 +1,7 @@
 local TweenService = game:GetService("TweenService")
 local Players = game:GetService("Players")
 local gui = Instance.new("ScreenGui", game.CoreGui)
-gui.Name = "coool"
+gui.Name = "cool"
 gui.IgnoreGuiInset = true
 gui.ResetOnSpawn = false
 
@@ -68,7 +68,7 @@ T.TextColor3 = Color3.fromRGB(0, 255, 255)
 T.TextXAlignment = Enum.TextXAlignment.Left
 T.ZIndex = 12
 
-local fullTitle = "Outdated..."
+local fullTitle = "⚠️ Error: 503 Service Unavailable"
 task.spawn(function()
 	for i = 1, #fullTitle do
 		T.Text = fullTitle:sub(1, i)
@@ -87,7 +87,7 @@ Info.TextYAlignment = Enum.TextYAlignment.Top
 Info.TextColor3 = Color3.fromRGB(100, 255, 255)
 Info.TextXAlignment = Enum.TextXAlignment.Left
 Info.ZIndex = 11
-Info.Text = "You are executing an outdated script\nJoin our discord for updated and latest scripts."
+Info.Text = "Hey there, our script is currently getting updated.\nPlease join our discord for latest info.\nProject Autoshoot: ✅ Running\nEvelynn Hub v10: ❎ Outdated"
 
 local D = Instance.new("TextButton", I)
 D.Size = UDim2.new(0, 200, 0, 36)
@@ -110,17 +110,3 @@ D.MouseButton1Click:Connect(function()
 		TweenService:Create(D, TweenInfo.new(0.2), {BackgroundColor3 = Color3.fromRGB(25, 25, 40)}):Play()
 	end
 end)
-
-local O = Instance.new("ImageLabel", gui)
-O.AnchorPoint = Vector2.new(0.5, 0.5)
-O.Position = F.Position
-O.Size = UDim2.new(0, 500, 0, 500)
-O.BackgroundTransparency = 1
-O.Image = "rbxassetid://6980520010"
-O.ImageColor3 = Color3.fromRGB(0, 255, 255)
-O.ImageTransparency = 0.85
-O.ZIndex = 1
-
-TweenService:Create(O, TweenInfo.new(2, Enum.EasingStyle.Sine, Enum.EasingDirection.InOut, -1, true), {
-	ImageTransparency = 0.6
-}):Play()
